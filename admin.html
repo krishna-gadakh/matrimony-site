@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matrimony — Simple Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><strong>M</strong></div>
+      <div class="title">
+        <h1>Matrimony Demo</h1>
+        <p class="muted">Find matches • Demo frontend (HTML/CSS/JS)</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn" id="openRegister">Create Profile</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <aside class="card filters">
+        <!-- Filters sidebar -->
+        <h3>Search & Filters</h3>
+        <div class="field">
+          <label for="searchName">Name or Keyword</label>
+          <input type="text" id="searchName" placeholder="e.g. Priya, Software" />
+        </div>
+        <div class="field">
+          <label for="ageMin">Age range</label>
+          <div style="display:flex;gap:8px">
+            <input type="number" id="ageMin" placeholder="From"/>
+            <input type="number" id="ageMax" placeholder="To"/>
+          </div>
+        </div>
+        <div class="field">
+          <label for="gender">Gender</label>
+          <select id="gender">
+            <option value="any">Any</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="city">City</label>
+          <input type="text" id="city" placeholder="e.g. Mumbai" />
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn" id="applyFilters">Apply</button>
+          <button class="btn secondary" id="resetFilters">Reset</button>
+        </div>
+
+        <hr style="margin:14px 0;" />
+        <h4>Quick Sample Actions</h4>
+        <p class="muted" style="font-size:13px">Use sample data to see how UI behaves.</p>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button class="btn secondary" id="loadSample">Load Sample</button>
+        </div>
+      </aside>
+
+      <section>
+        <div class="card">
+          <div class="controls">
+            <div style="flex:1">
+              <input type="text" id="quickSearch" placeholder="Quick search by name..." />
+            </div>
+            <div>
+              <select id="sortBy">
+                <option value="newest">Newest</option>
+                <option value="ageAsc">Age: Low → High</option>
+                <option value="ageDesc">Age: High → Low</option>
+              </select>
+            </div>
+          </div>
+          <div class="profiles" id="profiles"></div>
+        </div>
+        <footer class="card" style="margin-top:12px">
+          This is a demo matrimony frontend. Data is stored locally in your browser (localStorage).
+        </footer>
+      </section>
+    </div>
+  </main>
+
+  <!-- Modals -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Create profile</h3>
+        <button class="btn secondary" id="closeModal">Close</button>
+      </div>
+      <form id="profileForm">
+        <!-- form fields here -->
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="viewBackdrop">
+    <div class="modal" id="viewModal"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
